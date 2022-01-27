@@ -1,0 +1,15 @@
+h1 List all feeds
+table
+  thead
+    tr
+      th Title
+      th URL
+      th Actions
+  tbody
+    - @feeds.each do |feed|
+      tr
+        td= feed.title
+        td= feed.url
+        td= link_to 'Show', feed_path(feed.id)
+        td= link_to 'Edit', edit_feed_path(feed.id)
+        td= link_to "Delete", feed_path(feed.id), method: :delete

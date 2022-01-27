@@ -1,0 +1,19 @@
+<h1>Edit Feed</h1>
+
+<%= form_with(model: @feed, local: true) do |f| %>
+
+  <p>
+    <%= f.label :title %><br/>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :url %><br/>
+    <%= f.text_field :url %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>

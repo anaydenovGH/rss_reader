@@ -1,0 +1,19 @@
+<h1>Create a new Feed</h1>
+
+<%= form_with scope: :feed, url: feeds_path, local: true do |f| %>
+
+  <p>
+    <%= f.label :title %><br/>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :url %><br/>
+    <%= f.text_field :url %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>
