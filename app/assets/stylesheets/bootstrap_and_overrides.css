@@ -9,3 +9,7 @@
   padding: 10px 90px !important;
   font-size: 20px;
 }
+
+.form-group {
+  inline-size: 300px;
+}

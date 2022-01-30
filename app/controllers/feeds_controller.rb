@@ -5,7 +5,7 @@ class FeedsController < ApplicationController
   end
 
   def index
-    @feeds = Feed.all
+    @feeds = Feed.all.order(created_at: :desc)
   end
 
   def new
@@ -19,7 +19,7 @@ class FeedsController < ApplicationController
   def create
     @feed = Feed.new(params.require(:feed).permit(:title, :url))
     @feed.save
-    redirect_to feed_path(@feed)
+    redirect_to feeds_path
   end
 
   def update
