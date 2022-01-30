@@ -1,8 +1,18 @@
+ul.breadcrumb
+  li
+    a 
+      = link_to "Reader", posts_path
+      span.divider /
+  li
+    a 
+      = link_to "Feeds", feeds_path
+      span.divider /
+
 .container
   - @posts.each do |post|
     .panel.panel-default
       .panel-body
-        = link_to post.title, post
-        | \-
+        = link_to post.title, post.url
+        |  - 
         i
           | published #{time_ago_in_words(post.created_at)} ago.

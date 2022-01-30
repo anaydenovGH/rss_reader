@@ -4,3 +4,8 @@
   Static version of css will use Glyphicons sprites by default
   =require twitter-bootstrap-static/sprites
 */
+
+.breadcrumb {
+  padding: 10px 90px !important;
+  font-size: 20px;
+}

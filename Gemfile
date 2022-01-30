@@ -24,7 +24,9 @@ gem 'twitter-bootstrap-rails', '5.0.0'
 
 gem 'slim', '4.1.0'
 # Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
+gem 'redis', '4.5.1'
+
+gem 'sidekiq', '6.4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
