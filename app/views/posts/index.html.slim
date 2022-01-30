@@ -2,7 +2,7 @@
   - @posts.each do |post|
     .panel.panel-default
       .panel-body
-        = link_to post.title, post.url
+        = link_to post.title, post.url, target: :_blank
         |  - 
         i
           | published #{time_ago_in_words(post.created_at)} ago.

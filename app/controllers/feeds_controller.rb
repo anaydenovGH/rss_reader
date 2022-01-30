@@ -1,7 +1,8 @@
 class FeedsController < ApplicationController
 
+  before_action :set_feed, only: [:show, :edit, :update, :destroy]
+
   def show
-    @feed = Feed.find(params[:id])
   end
 
   def index
@@ -13,24 +14,31 @@ class FeedsController < ApplicationController
   end
 
   def edit
-    @feed = Feed.find(params[:id])
   end
 
   def create
-    @feed = Feed.new(params.require(:feed).permit(:title, :url))
+    @feed = Feed.new(feed_params)
     @feed.save
     redirect_to feeds_path
   end
 
   def update
-    @feed = Feed.find(params[:id])
-    @feed.update(params.require(:feed).permit(:title, :url))
+    @feed.update(feed_params)
     redirect_to feed_path(@feed)
   end
 
   def destroy
-    @feed = Feed.find(params[:id])
     @feed.destroy
     redirect_to feeds_path
+  end
+
+  private
+
+  def set_feed
+    @feed = Feed.find(params[:id])
+  end
+
+  def feed_params
+    params.require(:feed).permit(:title, :url)
   end
 end
